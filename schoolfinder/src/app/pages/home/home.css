@@ -1,0 +1,374 @@
+* {
+  box-sizing: border-box;
+}
+
+:host {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #172033;
+}
+
+
+/* Navbar */
+
+.navbar {
+  height: 70px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  background: white;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+  color: #3157d5;
+}
+
+.logo span {
+  color: #ff7b39;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 28px;
+  flex: 1;
+}
+
+.navbar nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.login-btn {
+  padding: 10px 22px;
+  border: 1px solid #3157d5;
+  border-radius: 7px;
+  background: white;
+  color: #3157d5;
+  cursor: pointer;
+}
+
+
+/* Hero */
+
+.hero {
+  padding: 90px 20px;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    #edf3ff,
+    #fff5ed
+  );
+}
+
+.hero h1 {
+  font-size: 48px;
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+
+.hero p {
+  color: #667085;
+  font-size: 18px;
+  margin-bottom: 35px;
+}
+
+
+/* Search */
+
+.search-box {
+  max-width: 900px;
+  margin: auto;
+  padding: 10px;
+  background: white;
+  display: flex;
+  gap: 5px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+.search-box select,
+.search-box input {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-btn {
+  background: #3157d5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0 30px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+/* Sections */
+
+.section {
+  max-width: 1150px;
+  margin: auto;
+  padding: 70px 20px;
+}
+
+.light-section {
+  max-width: none;
+  padding-left: 7%;
+  padding-right: 7%;
+  background: #f8fafc;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.section-heading h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.section-heading p {
+  color: #667085;
+}
+
+
+/* Categories */
+
+.category-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.category-card {
+  padding: 30px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  transition: 0.3s;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.category-icon {
+  width: 55px;
+  height: 55px;
+  display: grid;
+  place-items: center;
+  background: #eef3ff;
+  border-radius: 12px;
+  font-size: 25px;
+}
+
+.category-card h3 {
+  margin-top: 20px;
+}
+
+.category-card p {
+  color: #667085;
+  line-height: 1.6;
+}
+
+.category-card span {
+  color: #3157d5;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+
+/* Schools */
+
+.school-container {
+  max-width: 1150px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.school-card {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.school-image {
+  height: 160px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(
+    135deg,
+    #dbeafe,
+    #fce7f3
+  );
+  font-size: 55px;
+}
+
+.school-info {
+  padding: 20px;
+}
+
+.school-info h3 {
+  margin-top: 0;
+}
+
+.school-info p {
+  color: #667085;
+  font-size: 14px;
+}
+
+.school-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.rating {
+  background: #fff4d6;
+  padding: 6px 10px;
+  border-radius: 20px;
+}
+
+.school-bottom button {
+  border: none;
+  background: #3157d5;
+  color: white;
+  padding: 9px 13px;
+  border-radius: 7px;
+}
+
+
+/* Features */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.feature {
+  text-align: center;
+}
+
+.feature-icon {
+  margin: auto;
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  background: #eef3ff;
+  border-radius: 50%;
+  font-size: 25px;
+}
+
+.feature p {
+  color: #667085;
+  line-height: 1.5;
+}
+
+
+/* CTA */
+
+.cta-section {
+  margin: 30px 7% 70px;
+  padding: 55px 20px;
+  text-align: center;
+  border-radius: 18px;
+  background: #3157d5;
+  color: white;
+}
+
+.cta-section p {
+  margin-bottom: 25px;
+}
+
+.cta-section button {
+  border: none;
+  background: white;
+  color: #3157d5;
+  padding: 13px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+/* Footer */
+
+footer {
+  background: #111827;
+  color: #d1d5db;
+  padding: 45px 7% 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 50px;
+}
+
+.footer-content h2 {
+  color: white;
+}
+
+.footer-content h3 {
+  color: white;
+}
+
+.copyright {
+  border-top: 1px solid #374151;
+  margin-top: 30px;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 13px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .navbar nav {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 35px;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  .search-btn {
+    height: 48px;
+  }
+
+  .category-container,
+  .school-container,
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+}

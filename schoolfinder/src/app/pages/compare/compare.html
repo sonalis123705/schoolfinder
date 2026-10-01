@@ -1,0 +1,29 @@
+<div class="compare-page">
+
+  <h1>Compare Schools</h1>
+
+  <div class="compare-container">
+
+    @for (school of selectedSchools; track school.id) {
+
+      <div class="school-card">
+
+        <h2>{{ school.name }}</h2>
+
+        <p><strong>City:</strong> {{ school.city }}</p>
+
+        <p><strong>Location:</strong> {{ school.location }}</p>
+
+        <p><strong>Board:</strong> {{ school.board }}</p>
+
+        <p><strong>Rating:</strong> ⭐ {{ school.rating }}</p>
+
+        <p><strong>Fees:</strong> {{ school.fees }}</p>
+
+      </div>
+
+    }
+
+  </div>
+
+</div>

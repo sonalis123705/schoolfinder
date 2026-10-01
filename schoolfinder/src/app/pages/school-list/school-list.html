@@ -1,0 +1,190 @@
+<div class="page">
+
+    <!-- Header -->
+
+    <div class="page-header">
+
+        <h1>Find the Right School</h1>
+
+        <p>
+            Search and compare schools based on your requirements.
+        </p>
+
+    </div>
+
+
+    <!-- Filters -->
+
+    <div class="filter-box">
+
+        <input type="text" placeholder="Search school or location" [(ngModel)]="searchText">
+
+
+        <select [(ngModel)]="selectedCity">
+
+            <option value="">
+                All Cities
+            </option>
+
+            <option value="Mumbai">
+                Mumbai
+            </option>
+
+            <option value="Thane">
+                Thane
+            </option>
+
+            <option value="Pune">
+                Pune
+            </option>
+
+            <option value="Delhi">
+                Delhi
+            </option>
+
+        </select>
+
+
+        <select [(ngModel)]="selectedBoard">
+
+            <option value="">
+                All Boards
+            </option>
+
+            <option value="CBSE">
+                CBSE
+            </option>
+
+            <option value="ICSE">
+                ICSE
+            </option>
+
+            <option value="State Board">
+                State Board
+            </option>
+
+        </select>
+
+
+        <button class="clear-btn" (click)="clearFilters()">
+            Clear
+        </button>
+
+    </div>
+
+
+    <!-- Result Count -->
+
+    <div class="result-header">
+
+        <h2>
+            Schools
+        </h2>
+
+        <span>
+            {{ filteredSchools.length }} schools found
+        </span>
+
+    </div>
+
+
+    <!-- School Cards -->
+
+    <div class="school-container">
+
+        @for (school of filteredSchools; track school.id) {
+
+        <div class="school-card">
+
+            <!-- Image -->
+
+            <div class="school-image">
+                🏫
+            </div>
+
+
+            <!-- School Information -->
+
+            <div class="school-content">
+
+                <div class="school-title">
+
+                    <h3>
+                        {{ school.name }}
+                    </h3>
+
+                    <span class="rating">
+                        ⭐ {{ school.rating }}
+                    </span>
+
+                </div>
+
+
+                <p class="location">
+                    📍 {{ school.location }}
+                </p>
+
+
+                <p>
+                    🎓 {{ school.board }}
+                </p>
+
+
+                <p>
+                    💰 {{ school.fees }}
+                </p>
+
+
+             
+
+
+                <div class="buttons">
+
+                    <a class="details-btn" [routerLink]="['/schools', school.id]">
+                        View Details
+                    </a>
+
+
+
+                    <button class="compare-btn" (click)="addToCompare(school)">
+                        Compare
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        }
+
+    </div>
+
+
+    <!-- No Result -->
+
+    @if (filteredSchools.length === 0) {
+
+    <div class="no-result">
+
+        <div>
+            🔍
+        </div>
+
+        <h2>
+            No schools found
+        </h2>
+
+        <p>
+            Try changing your search or filters.
+        </p>
+
+        <button (click)="clearFilters()">
+            Clear Filters
+        </button>
+
+    </div>
+
+    }
+
+</div>

@@ -1,0 +1,49 @@
+<div class="details-container">
+
+  @if (school(); as data) {
+
+    <div class="school-details-card">
+
+      <h1>{{ data.name }}</h1>
+
+      <p class="location">
+        📍 {{ data.location }}
+      </p>
+
+      <div class="details-grid">
+
+        <div>
+          <strong>City</strong>
+          <p>{{ data.city }}</p>
+        </div>
+
+        <div>
+          <strong>Board</strong>
+          <p>{{ data.board }}</p>
+        </div>
+
+        <div>
+          <strong>Rating</strong>
+          <p>⭐ {{ data.rating }}</p>
+        </div>
+
+        <div>
+          <strong>Fees</strong>
+          <p>{{ data.fees }}</p>
+        </div>
+
+      </div>
+
+      <button class="apply-btn">
+        Apply for Admission
+      </button>
+
+    </div>
+
+  } @else {
+
+    <p>Loading...</p>
+
+  }
+
+</div>

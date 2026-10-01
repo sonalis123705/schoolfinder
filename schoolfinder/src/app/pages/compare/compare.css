@@ -1,0 +1,27 @@
+.compare-page {
+  padding: 40px;
+}
+
+.compare-page h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.compare-container {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
+.school-card {
+  width: 350px;
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.school-card h2 {
+  margin-bottom: 20px;
+}

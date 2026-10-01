@@ -1,0 +1,503 @@
+<!-- Navbar -->
+
+<header class="navbar">
+
+  <div class="logo">
+    School<span>Finder</span>
+  </div>
+
+  <nav>
+    <a href="/home">Home</a>
+    <a href="/schools">Explore Schools</a>
+    <a href="/compare">Compare Schools</a>
+    <a href="#">About Us</a>
+  </nav>
+
+  <button class="login-btn" routerLink="/login">
+    Login
+  </button>
+
+</header>
+
+
+<!-- Hero Section -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <h1>
+      Find the Right School
+      <br>
+      for Your Child
+    </h1>
+
+    <p>
+      Search, compare and explore schools near you.
+    </p>
+
+
+    <!-- Search Box -->
+
+    <div class="search-box">
+
+      <select [(ngModel)]="selectedCity">
+
+        <option value="">
+          Select City
+        </option>
+
+        <option value="Mumbai">
+          Mumbai
+        </option>
+
+        <option value="Thane">
+          Thane
+        </option>
+
+        <option value="Pune">
+          Pune
+        </option>
+
+        <option value="Delhi">
+          Delhi
+        </option>
+
+      </select>
+
+
+      <select [(ngModel)]="selectedBoard">
+
+        <option value="">
+          Select Board
+        </option>
+
+        <option value="CBSE">
+          CBSE
+        </option>
+
+        <option value="ICSE">
+          ICSE
+        </option>
+
+        <option value="State Board">
+          State Board
+        </option>
+
+      </select>
+
+
+      <input
+        type="text"
+        [(ngModel)]="searchText"
+        placeholder="Search school name or location"
+      >
+
+
+      <button
+        class="search-btn"
+        (click)="searchSchools()"
+      >
+        Search
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- Categories -->
+
+<section class="section">
+
+  <div class="section-heading">
+
+    <h2>
+      Explore Schools
+    </h2>
+
+    <p>
+      Find the best school according to your requirements.
+    </p>
+
+  </div>
+
+
+  <div class="category-container">
+
+
+    <div class="category-card">
+
+      <div class="category-icon">
+        🏫
+      </div>
+
+      <h3>
+        Day Schools
+      </h3>
+
+      <p>
+        Explore schools in your city with different boards
+        and facilities.
+      </p>
+
+      <span>
+        Explore Schools →
+      </span>
+
+    </div>
+
+
+    <div class="category-card">
+
+      <div class="category-icon">
+        🏠
+      </div>
+
+      <h3>
+        Boarding Schools
+      </h3>
+
+      <p>
+        Find residential schools with academics,
+        sports and activities.
+      </p>
+
+      <span>
+        Explore Schools →
+      </span>
+
+    </div>
+
+
+    <div class="category-card">
+
+      <div class="category-icon">
+        💻
+      </div>
+
+      <h3>
+        Online Schools
+      </h3>
+
+      <p>
+        Discover flexible online education options
+        for students.
+      </p>
+
+      <span>
+        Explore Schools →
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- Popular Schools -->
+
+<section class="section light-section">
+
+  <div class="section-heading">
+
+    <h2>
+      Popular Schools
+    </h2>
+
+    <p>
+      Discover popular schools in different cities.
+    </p>
+
+  </div>
+
+
+  <div class="school-container">
+
+
+    <div class="school-card">
+
+      <div class="school-image">
+        🏫
+      </div>
+
+      <div class="school-info">
+
+        <h3>
+          Sunrise International School
+        </h3>
+
+        <p>
+          📍 Andheri, Mumbai
+        </p>
+
+        <p>
+          🎓 CBSE
+        </p>
+
+        <div class="school-bottom">
+
+          <span class="rating">
+            ⭐ 4.5
+          </span>
+
+          <button>
+            View Details
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="school-card">
+
+      <div class="school-image">
+        🎓
+      </div>
+
+      <div class="school-info">
+
+        <h3>
+          Green Valley Public School
+        </h3>
+
+        <p>
+          📍 Thane, Maharashtra
+        </p>
+
+        <p>
+          🎓 ICSE
+        </p>
+
+        <div class="school-bottom">
+
+          <span class="rating">
+            ⭐ 4.3
+          </span>
+
+          <button>
+            View Details
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="school-card">
+
+      <div class="school-image">
+        📚
+      </div>
+
+      <div class="school-info">
+
+        <h3>
+          Bright Future Academy
+        </h3>
+
+        <p>
+          📍 Pune, Maharashtra
+        </p>
+
+        <p>
+          🎓 CBSE
+        </p>
+
+        <div class="school-bottom">
+
+          <span class="rating">
+            ⭐ 4.6
+          </span>
+
+          <button>
+            View Details
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- Why SchoolFinder -->
+
+<section class="section">
+
+  <div class="section-heading">
+
+    <h2>
+      Why Choose SchoolFinder?
+    </h2>
+
+  </div>
+
+
+  <div class="features">
+
+    <div class="feature">
+
+      <div class="feature-icon">
+        🔎
+      </div>
+
+      <h3>
+        Easy Search
+      </h3>
+
+      <p>
+        Quickly find schools using city, board
+        and other filters.
+      </p>
+
+    </div>
+
+
+    <div class="feature">
+
+      <div class="feature-icon">
+        ⚖️
+      </div>
+
+      <h3>
+        Compare Schools
+      </h3>
+
+      <p>
+        Compare schools based on fees,
+        facilities and other information.
+      </p>
+
+    </div>
+
+
+    <div class="feature">
+
+      <div class="feature-icon">
+        📋
+      </div>
+
+      <h3>
+        Easy Admission
+      </h3>
+
+      <p>
+        Find admission information and
+        submit your application easily.
+      </p>
+
+    </div>
+
+
+    <div class="feature">
+
+      <div class="feature-icon">
+        ☎️
+      </div>
+
+      <h3>
+        Expert Guidance
+      </h3>
+
+      <p>
+        Get guidance to help you understand
+        your school options.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta-section">
+
+  <h2>
+    Looking for the right school?
+  </h2>
+
+  <p>
+    Start exploring schools today.
+  </p>
+
+  <button routerLink="/schools">
+    Explore Schools
+  </button>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+  <div class="footer-content">
+
+    <div>
+
+      <h2>
+        SchoolFinder
+      </h2>
+
+      <p>
+        Helping parents discover and compare schools.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h3>
+        Quick Links
+      </h3>
+
+      <p>Home</p>
+      <p>Schools</p>
+      <p>Compare</p>
+
+    </div>
+
+
+    <div>
+
+      <h3>
+        Contact
+      </h3>
+
+      <p>
+        Email: support@schoolfinder.com
+      </p>
+
+      <p>
+        Mumbai, India
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="copyright">
+
+    © 2026 SchoolFinder. All rights reserved.
+
+  </div>
+
+</footer>
