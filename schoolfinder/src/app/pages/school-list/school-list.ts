@@ -35,7 +35,8 @@ export class SchoolList implements OnInit {
   
   selectedCity = '';
   selectedBoard = '';
-  apiUrl = 'http://localhost:3000/api/schools';
+  // apiUrl = 'http://localhost:3000/api/schools';
+  apiUrl="https://schoolfinder-3moq.vercel.app/api/schools"
 
  schools: any[] = [];
 

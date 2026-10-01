@@ -27,7 +27,7 @@ export class SchoolDetails implements OnInit {
     if (id) {
 
       this.http
-        .get<any>(`http://localhost:3000/api/schools/${id}`)
+        .get<any>(`http://schoolfinder-3moq.vercel.app/api/schools/${id}`)
         .subscribe({
           next: (data) => {
 
