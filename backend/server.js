@@ -73,6 +73,14 @@ app.get('/api/schools/:id', (req, res) => {
 });
 
 
-app.listen(3000, () => {
-  console.log('Server running on http://localhost:3000');
-});
+// app.listen(3000, () => {
+//   console.log('Server running on http://localhost:3000');
+// });
+
+if (require.main === module) {
+  app.listen(3000, () => {
+    console.log('Server running on http://localhost:3000');
+  });
+}
+
+module.exports = app;
