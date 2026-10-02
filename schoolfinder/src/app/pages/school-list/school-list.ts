@@ -15,6 +15,8 @@ import { CompareService } from '../../services/compare-service';
 })
 export class SchoolList implements OnInit {
   selectedSchools: any[] = [];
+  cities: any;
+  boards:any;
 
   constructor(private route: ActivatedRoute,private http: HttpClient,private compareService: CompareService, private router: Router) {
     this.route.queryParams.subscribe(params => {
@@ -23,6 +25,8 @@ export class SchoolList implements OnInit {
       this.selectedCity = params['city'] || '';
       this.selectedBoard = params['board'] || '';
        this.getSchools();
+       this.getCities();
+       this.getBoards();
 
     });
    
@@ -35,8 +39,9 @@ export class SchoolList implements OnInit {
   
   selectedCity = '';
   selectedBoard = '';
-  // apiUrl = 'http://localhost:3000/api/schools';
-  apiUrl="https://schoolfinder-3moq.vercel.app/api/schools"
+   //apiUrl = 'http://localhost:3000';
+   
+ apiUrl="https://schoolfinder-3moq.vercel.app"
 
  schools: any[] = [];
 
@@ -48,7 +53,7 @@ export class SchoolList implements OnInit {
 // }
 
 getSchools() {debugger
-  this.http.get<any[]>(this.apiUrl).subscribe(data => {
+  this.http.get<any[]>(`${this.apiUrl}/api/schools`).subscribe(data => {
 
     console.log('API DATA:', data);
 
@@ -122,6 +127,32 @@ addToCompare(school: any) {debugger
 }
 }
 
+getCities() {
+
+  this.http
+    .get<string[]>(`${this.apiUrl}/api/cities`)
+    .subscribe(data => {
+
+      console.log('CITIES:', data);
+
+      this.cities = data;
+
+    });
+
+}
 
 
+getBoards() {
+
+  this.http
+    .get<string[]>(`${this.apiUrl}/api/boards`)
+    .subscribe(data => {
+
+      console.log('BOARDS:', data);
+
+      this.boards = data;
+
+    });
+
+}
 }

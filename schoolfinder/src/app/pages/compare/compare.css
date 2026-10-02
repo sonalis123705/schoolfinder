@@ -1,27 +1,205 @@
+
 .compare-page {
+
   padding: 40px;
+
 }
 
 .compare-page h1 {
+
   text-align: center;
+
   margin-bottom: 30px;
+
 }
 
 .compare-container {
+
   display: flex;
+
   gap: 25px;
+
   justify-content: center;
+
+  flex-wrap: wrap;
+
 }
 
 .school-card {
+
   width: 350px;
+
   padding: 25px;
+
   border: 1px solid #ddd;
+
   border-radius: 12px;
+
   background: white;
+
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+  box-sizing: border-box;
+
 }
 
 .school-card h2 {
+
   margin-bottom: 20px;
+
 }
+
+
+/* Empty Compare UI */
+
+.empty-compare {
+
+  width: 500px;
+
+  max-width: 100%;
+
+  margin: 50px auto;
+
+  padding: 50px 30px;
+
+  text-align: center;
+
+  border: 1px solid #ddd;
+
+  border-radius: 12px;
+
+  background: white;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+  box-sizing: border-box;
+
+}
+
+.empty-icon {
+
+  font-size: 50px;
+
+  margin-bottom: 20px;
+
+}
+
+.empty-compare h2 {
+
+  margin-bottom: 15px;
+
+}
+
+.empty-compare p {
+
+  color: #666;
+
+  line-height: 1.6;
+
+  margin-bottom: 25px;
+
+}
+
+.school-list-btn {
+
+  display: inline-block;
+
+  padding: 12px 25px;
+
+  border-radius: 6px;
+
+  background: #1976d2;
+
+  color: white;
+
+  text-decoration: none;
+
+}
+
+.school-list-btn:hover {
+
+  background: #125aa0;
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .compare-page {
+
+    padding: 20px 15px;
+
+  }
+
+  .compare-page h1 {
+
+    font-size: 26px;
+
+    margin-bottom: 25px;
+
+  }
+
+  .compare-container {
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 18px;
+
+  }
+
+  .school-card {
+
+    width: 100%;
+
+    padding: 20px;
+
+  }
+
+  .school-card h2 {
+
+    font-size: 20px;
+
+  }
+
+  .empty-compare {
+
+    width: 100%;
+
+    margin: 30px auto;
+
+    padding: 35px 20px;
+
+  }
+
+  .empty-icon {
+
+    font-size: 42px;
+
+  }
+
+  .empty-compare h2 {
+
+    font-size: 22px;
+
+  }
+
+  .empty-compare p {
+
+    font-size: 14px;
+
+  }
+
+  .school-list-btn {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+  }
+
+}
+

@@ -15,4 +15,8 @@ export class CompareService {
     return this.selectedSchools;
   }
 
+  clearSchools(): void {
+  this.selectedSchools = [];
+}
+
 }

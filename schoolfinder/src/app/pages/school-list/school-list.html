@@ -26,21 +26,16 @@
                 All Cities
             </option>
 
-            <option value="Mumbai">
-                Mumbai
-            </option>
 
-            <option value="Thane">
-                Thane
-            </option>
+            @for (city of cities; track city)
+            {
+            <option [value]="city"> {{ city }}
 
-            <option value="Pune">
-                Pune
             </option>
+            }
 
-            <option value="Delhi">
-                Delhi
-            </option>
+
+
 
         </select>
 
@@ -50,18 +45,14 @@
             <option value="">
                 All Boards
             </option>
+            @for (board of boards; track board)
+            {
+            <option [value]="board"> {{ board }}
 
-            <option value="CBSE">
-                CBSE
             </option>
+            }
 
-            <option value="ICSE">
-                ICSE
-            </option>
 
-            <option value="State Board">
-                State Board
-            </option>
 
         </select>
 
@@ -135,7 +126,7 @@
                 </p>
 
 
-             
+
 
 
                 <div class="buttons">

@@ -2,28 +2,72 @@
 
   <h1>Compare Schools</h1>
 
-  <div class="compare-container">
+  @if (selectedSchools.length > 0) {
 
-    @for (school of selectedSchools; track school.id) {
+    <div class="compare-container">
 
-      <div class="school-card">
+      @for (school of selectedSchools; track school.id) {
 
-        <h2>{{ school.name }}</h2>
+        <div class="school-card">
 
-        <p><strong>City:</strong> {{ school.city }}</p>
+          <h2>{{ school.name }}</h2>
 
-        <p><strong>Location:</strong> {{ school.location }}</p>
+          <p>
+            <strong>City:</strong> {{ school.city }}
+          </p>
 
-        <p><strong>Board:</strong> {{ school.board }}</p>
+          <p>
+            <strong>Location:</strong> {{ school.location }}
+          </p>
 
-        <p><strong>Rating:</strong> ⭐ {{ school.rating }}</p>
+          <p>
+            <strong>Board:</strong> {{ school.board }}
+          </p>
 
-        <p><strong>Fees:</strong> {{ school.fees }}</p>
+          <p>
+            <strong>Rating:</strong> ⭐ {{ school.rating }}
+          </p>
 
+          <p>
+            <strong>Fees:</strong> {{ school.fees }}
+          </p>
+
+          <!-- Remove Button -->
+          <button
+            class="remove-btn"
+            (click)="removeSchool(school.id)">
+            Remove
+          </button>
+
+        </div>
+
+      }
+
+    </div>
+
+  } @else {
+
+    <div class="empty-compare">
+
+      <div class="empty-icon">
+        ⚖️
       </div>
 
-    }
+      <h2>Compare Schools</h2>
 
-  </div>
+      <p>
+        Select two schools from the school list to compare
+        their details, ratings, boards and fees.
+      </p>
+
+      <a
+        class="school-list-btn"
+        routerLink="/schools">
+        Browse Schools
+      </a>
+
+    </div>
+
+  }
 
 </div>

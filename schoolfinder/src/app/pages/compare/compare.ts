@@ -1,27 +1,75 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { CompareService } from '../../services/compare-service';
 
 @Component({
-  imports: [],
   selector: 'app-compare',
-  styleUrl: './compare.css',
+  standalone: true,
+  imports: [RouterLink],
   templateUrl: './compare.html',
+  styleUrl: './compare.css'
 })
-export class Compare implements OnInit{
+export class Compare implements OnInit {
+
   selectedSchools: any[] = [];
-  constructor(private compareService: CompareService)
-  {debugger
-    console.log('COMPARE SERVICE:', this.compareService);
+
+  constructor(
+    private compareService: CompareService
+  ) {}
+
+  ngOnInit(): void {
+
+    // First check service
+    this.selectedSchools =
+      this.compareService.getSchools();
+
+    // If service is empty, get data from sessionStorage
+    if (this.selectedSchools.length === 0) {
+
+      const savedSchools =
+        sessionStorage.getItem('compareSchools');
+
+      if (savedSchools) {
+
+        this.selectedSchools =
+          JSON.parse(savedSchools);
+
+        // Put data back into service
+        this.selectedSchools.forEach(school => {
+          this.compareService.addSchool(school);
+        });
+
+      }
+
+    }
+
+    console.log(
+      'Compare Page Schools:',
+      this.selectedSchools
+    );
 
   }
-ngOnInit() {
 
-  const data = sessionStorage.getItem('compareSchools');
+  removeSchool(schoolId: number): void {debugger
 
-  if (data) {
-    this.selectedSchools = JSON.parse(data);
-  }
+  this.selectedSchools =
+    this.selectedSchools.filter(
+      school => school.id !== schoolId
+    );
 
-  console.log('Compare Page Schools:', this.selectedSchools);
+  // Update service
+  this.compareService.clearSchools();
+
+  this.selectedSchools.forEach(school => {
+    this.compareService.addSchool(school);
+  });
+
+  // Update sessionStorage
+  sessionStorage.setItem(
+    'compareSchools',
+    JSON.stringify(this.selectedSchools)
+  );
+
 }
+
 }
